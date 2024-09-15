@@ -1,0 +1,30 @@
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+
+}
+
+.nav{
+    margin: 0 20px 0 20px;
+}
+.nav ul li{
+    display: inline-block;
+    margin: 2px;
+}
+
+.nav ul li a{
+    color: whitesmoke;
+    text-decoration: none;
+}
