@@ -1,30 +1,477 @@
 
 
+
+
+* {
+    box-sizing: border-box;
+}
 body{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
+    font-weight: 500;
 }
 
 
+/* header section */
 
-.navbar{
+header{
+    background-color:yellowgreen;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: black;
-    color: white;
+    padding: 0px 25px 0px 25px;
+    
+    
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+}
+
+
+.openbtn{
+    margin-right: 5px;
+    border: none;
+    background-color:#808080;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+    display: none;
+    transition: 0.3s;
+    padding: 1%;
 
 }
 
-.nav{
-    margin: 0 20px 0 20px;
-}
-.nav ul li{
-    display: inline-block;
-    margin: 2px;
-}
-
-.nav ul li a{
-    color: whitesmoke;
+header ul a{
     text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+   
+}
+
+header a:hover{
+   color: red;
+   transition: 0.20s;
+}
+
+#login a{
+    font-size: 20px;
+    font-weight: 700;
+    color: black;
+    margin: 2px;
+    text-decoration: none;
+    
+}
+
+@media(max-width:700px){
+    #navitems{
+        display: none;
+    }
+    header{
+        font-size: 8px;
+    }
+#login a{
+    font-size: 15px;
+}
+.openbtn{
+    display: block;
+
+}
+
+}
+
+
+/* aside bar */
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+.sidebar a.closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+}
+.sidebar a:hover {
+    color: red;
+}
+
+@media screen and (max-height: 450px) {
+    .sidebar {
+        padding-top: 15px;
+    }
+    .sidebar a {
+        font-size: 18px;
+    }
+}
+
+/* hero section  */
+
+.herosection{
+    text-align: center;
+    align-content: center;
+    text-transform: capitalize;
+    /* -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    color: white;
+    background-image: url("https://i.natgeofe.com/n/748f1c42-0d8b-498e-85fd-88151c6f863b/01_organic_farming_i8860_20181003_11260.jpg?w=1200");
+    height: 300px;
+    width: auto;
+}
+
+.herosection button{
+    background-color: white;
+    color: black;
+    border-radius: 3px;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    float: left;
+    margin: 2px;
+    cursor: pointer;
+}
+
+.inputfile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#photoInput{
+   display: none;
+
+}
+
+.herosection .inputfile button:hover {
+    border-style: double;
+    transition: 0.05s;
+}
+
+
+@media(max-width:700px){
+    .herosection p{
+        font-size:12px ;
+    }
+    .herosection{
+        background-image:url("https://cdn.agdaily.com/wp-content/uploads/2018/09/bg-corn_field-001-naramit.jpg") ;
+    }
+
+}
+
+/* result area */
+
+.result{
+    background-color:#f5fffa;
+    margin: 5px 10%;
+    padding: 10px;
+    text-align: center;
+    text-transform: capitalize;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
+}
+
+
+#photoPreview {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    display: none; /* Hidden by default, will display once photo is uploaded */
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.researchresult{
+    display: flex;
+    padding: 10px;
+}
+
+#resultshow{
+    margin-left: 20px;
+    padding: 20px;
+    border-radius: 5px;
+}
+.planttextinfo{
+    margin-left: 40px;
+}
+
+@media(max-width:600px){
+   #imageresult{
+    width:30%;
+   }
+   .result{
+    margin: 5px;
+
+   }
+}
+
+
+
+/* weather ☁️🌡️ api */
+
+
+.api{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://www.findingtheuniverse.com/wp-content/uploads/2017/01/Blue2Bhour2BFinland_by_Laurence2BNorah.jpg');
+    padding: 50px;
+
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.weather-container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #2c3e50;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input {
+    padding: 10px;
+    width: 70%;
+    border: 2px solid #3498db;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: #2980b9;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-bar button:hover {
+    background-color: #2980b9;
+    transform: scale(1.05);
+}
+
+.weather-card {
+    background-color: #ecf0f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-10px);
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.city-info {
+    margin-bottom: 20px;
+}
+
+#cityName {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #34495e;
+}
+
+#weatherDescription {
+    color: #7f8c8d;
+    font-size: 1.2em;
+}
+
+.weather-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.detail-item {
+    flex: 1;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.detail-item:hover {
+    transform: scale(1.1);
+}
+
+.detail-item p {
+    margin-bottom: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.detail-item span {
+    font-size: 1.2em;
+    color: #e74c3c;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media(max-width:600px){
+    .api{
+        padding: 5px;
+    }
+    .weather-container h1{
+        font-size: 30px;
+    }
+}
+
+
+/* crops information */
+
+.cropinformation{
+    padding: 10px;
+    background-color: #2980b9;
+}
+
+.cropinformation h1{
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+}
+
+.relatedcrops{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    /* overflow: scroll; */
+}
+
+.crops p{
+    padding: 10px;
+    background-color: white;
+   margin-top: -5px;
+   text-align: center;
+   font-size: 30px;
+   font-weight: 700;
+   text-transform: capitalize;
+}
+.crops{
+    margin: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.crops:hover{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+     cursor: pointer;
+}
+.crops img{
+    width: 200px;
+    height: 200px;
+}
+
+@media(max-width:600px){
+    .crops img{
+        width: 70px;
+        height: 70px;
+    }
+    .crops p{
+        padding:10px;
+        font-size: 10px;
+
+    }
+    .crops{
+        margin: 5px;
+    }
+
+
+}
+
+/* some youtube video turtorial */
+
+.youtubevideo{
+    background-color:rgb(217,0,76);
+    padding: 10px;
+
+}
+
+.youtubevideo h1{
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+}
+
+.tutorial{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+
+/* footer area */
+
+.footer{
+    padding:40px;
+    text-align: center;
+    background-color:rgb(220,220,220) ;
+}
+
+.footer button:hover{
+    background-color: #111;
+    color: white;
+    transform: scale(1.05);
+}
+
+@media(max-width:600px){
+    .footer p{
+        font-size:10px;
+        font-weight: 500;
+    }
 }

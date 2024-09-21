@@ -2,33 +2,199 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>plant disease forecasting system</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!--hendling media view sport-->
+    <title>plant_disease_forecasting_system</title>   <!--this the the seo-->
+    <link rel="stylesheet" href="style.css"> <!----link css here 💊---->
+     <link rel="stylesheet" href="boxicons.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <div class="nav">
-                <h1>plant disease forecasting system</h1>
-            </div>
-
-            <div class="nav">
-                <input type="text" placeholder="search" >
-                <input type="button" value="search">
-            </div>
-
-            <div class="nav">
-               <ul>
-                <li><a href="#">home</a></li>
-                <li><a href="#">menu</a></li>
-                <li><a href="#">contect us</a></li>
-               </ul> 
-
-            </div>
+    <header> 
+         <!--header section of the page-->
+        <nav class="navbar" id="navbar"> 
+            <button type="button" class="openbtn" onclick="openSidebar()">☰</button>
+            <h1>plant disease forecasting system</h1> 
         </nav>
-    </header>
 
+        <div class="navbar" id="navitems">
+            <ul>
+                <a href="#">home</a>
+                <a href="#">about us</a>
+                <a href="#"> contact us</a>
+                <a href="#">q&a</a>
+                <a href="#"> setting</a>
+            </ul>
+        </div>
+
+        <div class="navbar" id="login">
+            <a href="#">user</a>|<a href="#">login</a>
+        </div>
+
+    </header>
+    <!-- aside bar  -->
+    <aside class="aside">
+        <div class="sidebar" id="mySidebar">
+            <a href="#" class="closebtn" onclick="closeSidebar()">×</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+    </aside>
+    <!-- hero section -->
+     <div class="herosection">
+        <h1>predict plant disease before they strike</h1>
+        <p>get accurate and real-time disease predictions for your crops </p>
+         <!-- Hidden file input field -->
+        <div class="inputfile">
+         <button type="button" title="choosefiles" id="uploadBtn"><img alt="file" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATtJREFUSEvt1rsvBFEUx/HPUupFJEKtVmmE/0BUKqJBIdERhVei0SMUtEqtikSnUWqUKEUUXoXYKyuZrJ0xO25mC3u7yf3d8z2Pe87cihatSou42uDSMl+f6lksYyDFgz0s4v2vHibBIzjPYfASE7jNoU2VJMEr2Mpp7AE7+MjQv+IUV400SfA61nKCm5HNYb/+QBngUJK+vOAY/Z3M4A97aRH/T3CIeghdzdykhHYaU7Xv0Vr73XzvZ6V6F/MFoWnHZnAUNtPAPbhDZ2TwJI7rwaGHw00MaxWbkaFP6MZbVsT36I0M3sbSbzWOzPwarf3J+V7G5ApBnGA8GU1Z4DGclQ2+xmDeWR2zxuFxcZAFDi20EZNYfa081rrjJQs8jItq/3ZEgj9jAYeN7MX4CxXysw0ulLYih1qW6k9vnjgfhBTKPQAAAABJRU5ErkJggg=="/>file</button>
+         <input title="fileinput" type="file" id="photoInput" accept="image/*">
+         <button type="button" title="selectcamera" id="choosecamera"><img alt="camera" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfxJREFUSEvt1s3LTVEUx/HPk7wkbynKwEDeUhJFCjESA1Fe/gGijCgjIpQnEylTSjExEIWJgZD3EsIAGSgTpCTCQOKs2reu0z337NO9uRNndM4+a/2+e6299tp7yICeoQFxNQXPwhaMLk34By7idW4gTcALcAsTK8Q/YQVe5MBzwfNwB5NrRD9ieU7kOeDZuIspOZHgXYK/6WZfBi/ELsxoc4pop2ZCW2Yf8LLNJyZxHM9bY+3gOXiKMQ0huebfEUG8DYd28B4cy1XBq2Q7t4HPbpwogw/hYI3IQwzjOr4m2/FFDazGAcRSdXsOFz+D81fEdeCzRZq2FoBfFcqjcA4bu5Abg59gKX4m0e1Ym96v4lR6H1uAn2FmBbwxeCVuJ7FLWF8SvowNaWwzzvcD/B7T2iI9WSG6I0Ueu+JLUQsjO9g1ivheagihc6HLGkav3pRgsV/n9wp+hMVJJBf8GIt6BUfaJhVb7TeiqOpSPQKfi54wrldw+Mc+vZZZXOtwpR/FFRrRSpdkbKc4p8O2qps1Kq7W5M9g279uIC34g9Qyb+BbGpyANdhf3EListD3llkWjJtGtMmqLtVpAh1TvS9FUzPpnn4H42gotB+Lq3CzJ9l652XFstwvg+N7J/Zier1GI4u4gRzB6ZZXzp2rESHX+D84N1M92w0s1X8AYwlqH89rFFwAAAAASUVORK5CYII="/>camera</button>
+        </div>
+     </div>
+     <!-- result area -->
+     <div class="result">
+        <h3>result is here..</h3>
+        <div class="researchresult">
+        <div id="imageresult">
+            <img src="" alt="selected photo will be display here" id="photoPreview">
+        </div>
+        <!-- disease leaf information area -->
+        <div id="resultshow">
+            <p id="plantname"></p>
+            <p id="plantdisease"></p>
+            <p id="plantkingdom"></p>
+        </div>
+        </div>
+    </div>
+
+     <!--weather ☁️🌡️ api-->
+
+    <div class="api">
+
+        <div class="app-container">
+            <div class="weather-container">
+                <h1>Weather Dashboard</h1>
+                <div class="search-bar">
+                    <input type="text" id="cityInput" placeholder="Enter city name" />
+                    <button type="button" id="getWeatherBtn">Search</button>
+                </div>
     
-  </body>
+                <div id="weatherCard" class="weather-card hidden">
+                    <div class="city-info">
+                        <h2 id="cityName"></h2>
+                        <p id="weatherDescription"></p>
+                    </div>
+                    <div class="weather-details">
+                        <div class="detail-item">
+                            <p>Temperature</p>
+                            <span id="temperature"></span>
+                        </div>
+                        <div class="detail-item">
+                            <p>Humidity</p>
+                            <span id="humidity"></span>
+                        </div>
+                        <div class="detail-item">
+                            <p>Wind Speed</p>
+                            <span id="windSpeed"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+     </div>
+
+     <!-- crops information-->
+      <div class="cropinformation">
+        <h1 >related plant crops</h1>
+        <div class="relatedcrops">
+
+            <div class="crops">
+                <img src="https://img.freepik.com/premium-vector/slice-whole-tomato-cartoon-vector-illustration-red-tomatoes-flat-icon-outline_385450-1189.jpg?w=2000" alt="tomato">
+                <p>tomato</p>
+            </div>
+            <div class="crops">
+                <img src="https://png.pngtree.com/element_our/20190530/ourlarge/pngtree-cartoon-ripe-rice-image_1234522.jpg" alt="riceimage">
+                <p>rice</p>
+            </div>
+            <div class="crops">
+                <img src="https://media.istockphoto.com/id/1465794851/vector/isolated-red-onion-cartoon.jpg?s=612x612&w=0&k=20&c=SWXjfRmcole39L6CxGySQulUTM17TUYixDUOfP41-Ug=" alt="onionpicture">
+                <p>onion</p>
+            </div>
+            <div class="crops">
+                <img src="https://th.bing.com/th/id/R.d94a497af998e436644d40ef31f382f4?rik=em1r8k4KEBBYnw&riu=http%3a%2f%2fmedia.istockphoto.com%2fvectors%2fsack-of-potatoes-vector-id472330853%3fk%3d6%26m%3d472330853%26s%3d612x612%26w%3d0%26h%3dlFHmRvQWETnIZ2Hi02Q_H3LwvGVDaeT2AdWUytqZtPc%3d&ehk=2qiQNeTQ%2bGp8Y4FvvF30%2bcwiUDOtT9v1LeHrT8m91Yo%3d&risl=&pid=ImgRaw&r=0" alt="potatopicture">
+                <p>potato</p>
+            </div>
+            <div class="crops">
+                <img src="https://th.bing.com/th/id/OIP.MkGO6fGgdWuud7RFJTiMEQHaHH?w=254&h=245&c=8&rs=1&qlt=90&o=6&dpr=1.3rm=2&w=1200&h=1154&dpr=1.3&pid=ImgDetMain" alt="LadiesFinger">
+                <p>okra</p>
+            </div>
+            <div class="crops">
+                <img src="https://www.nicepng.com/png/detail/237-2372074_wheat-png-image-wheat-clip-art.png" alt="wheatimage">
+                <p>wheat</p>
+            </div>
+            <div class="crops">
+                <img src="https://static.vecteezy.com/system/resources/previews/002/852/969/original/cartoon-illustration-isolated-object-fresh-food-vegetable-cabbage-vector.jpg" alt="cabbagepicture">
+                <p>cabbage</p>
+            </div>
+            <div class="crops">
+                <img src="https://static.vecteezy.com/system/resources/previews/017/420/257/original/corn-maize-cartoon-illustration-vector.jpg" alt="mazie.jpg">
+                <p>mazie</p>
+            </div>
+            <div class="crops">
+                <img src="https://th.bing.com/th/id/OIP.YI9mGhMAC9ZFXJq_0BSAYAHaHa?w=512&h=512&rs=1&pid=ImgDetMain" alt="banana">
+                <p>banana</p>
+            </div>
+            <div class="crops">
+                <img src="https://media.istockphoto.com/vectors/watermelons-vector-illustration-isolated-on-white-background-vector-id1160844658?k=20&m=1160844658&s=612x612&w=0&h=-YmyHe6aKZJVKIkbUwkGjjxImE48mVGuo86ndJ3sGD8=" alt="melonpicture">
+                <p>melon</p>
+            </div>
+            <div class="crops">
+                <img src="https://www.kindpng.com/picc/m/51-516287_cucumber-cartoon-drawing-hd-png-download.png" alt="cucumber">
+                <p>cucumber</p>
+            </div>
+            <div class="crops">
+                <img src="https://th.bing.com/th/id/OIP.8bRRK6LRB8w74W8qGiJntAHaHZ?rs=1&pid=ImgDetMain" alt="beans">
+                <p>beans</p>
+            </div>
+
+        </div>
+
+      </div>
+
+      <!-- some youtube video turtorial -->
+
+      <div class="youtubevideo">
+        <h1> tutorial guids</h1>
+        <div class=" tutorial">
+        <div class="youtube">
+            <iframe  src="https://www.youtube.com/embed/05ITJlgPcR0?si=JCYEWd0fsote3bVX" title="plantdisease turtotial" allowfullscreen></iframe>  
+        </div>
+
+        <div class="youtube">
+            <iframe  src="https://www.youtube.com/embed/NDnrLd3C-cM?si=aT3Cu5-wFbv9R6yH" title="plantdiseaseturtorial" allowfullscreen></iframe>
+        </div>
+
+        <div class="youtube">
+            <iframe src="https://www.youtube.com/embed/gjMIh19zH7k?si=_BrEqLVpETiadO1f" title="plant disease turtorial" allowfullscreen></iframe>
+        </div>
+    </div>
+
+ </div>
+
+      <!-- footer area -->
+       <footer class="footer">
+        <div>
+            <input type="gmail" title="contactus" placeholder="connect us.." id="gmail" required>
+            <button type="submit" title="sendgmail">send</button>
+        </div><hr>
+        <div class="copyright">
+            <p>&copy; <span id="year"></span> plant disease forecasting system. All rights reserved.</p>
+        </div>
+
+       </footer>
+
+   <!-- link javascript here 🤖 -->
+    <script src="script.js"></script>
+</body>
 </html>
