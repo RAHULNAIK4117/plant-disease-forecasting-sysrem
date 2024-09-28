@@ -7,7 +7,6 @@
 
 
 //*  a side bar *//
-
 function openSidebar() {
     document.getElementById("mySidebar").style.width = "250px";
 }
@@ -15,6 +14,13 @@ function openSidebar() {
 function closeSidebar() {
     document.getElementById("mySidebar").style.width = "0";
 }
+
+//* sign up form open function*//
+function formopen(){
+    document.getElementById("id01").style.display='block'
+}
+
+
 
 //*footer section copyriht *//
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -88,6 +94,7 @@ function displayWeather(data) {
     weatherCard.style.transform = 'translateY(0)';
     weatherCard.style.opacity = '1';
 
+
     document.getElementById('cityName').textContent = data.name;
     document.getElementById('temperature').textContent = `${data.main.temp} °C`;
     document.getElementById('humidity').textContent = `${data.main.humidity} %`;
@@ -104,3 +111,9 @@ document.getElementById('getWeatherBtn').addEventListener('click', () => {
         alert("Please enter a city name.");
     }
 });
+
+
+// login form design
+
+ 
+
