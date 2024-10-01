@@ -20,7 +20,15 @@ function formopen(){
     document.getElementById("id01").style.display='block'
 }
 
-
+// login form
+document.getElementById('openFormBtn').addEventListener('click', function() {
+    document.getElementById('formPopup').style.display = 'block';
+  });
+  
+  document.getElementById('closeFormBtn').addEventListener('click', function() {
+    document.getElementById('formPopup').style.display = 'none';
+  });
+  
 
 //*footer section copyriht *//
 document.getElementById("year").textContent = new Date().getFullYear();
@@ -52,7 +60,27 @@ document.getElementById('photoInput').addEventListener('change', function(event)
         preview.style.display = 'none';
     }
 });
+  
 
+// camera capture photo processing herosection
+document.getElementById('openCamera').addEventListener('click', function() {
+    document.getElementById('cameraInput').click();
+});
+
+function previewImage(event) {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        const img = document.getElementById('photoPreview');
+        img.src = e.target.result;
+        img.style.display = 'block';
+    }
+    
+    if (file) {
+        reader.readAsDataURL(file);
+    }
+}
 
 //* disease and plant information section*//
 
@@ -113,7 +141,7 @@ document.getElementById('getWeatherBtn').addEventListener('click', () => {
 });
 
 
-// login form design
+// about page back button
 
- 
 
+document.getElementById('rahul').innerHTML="hello"

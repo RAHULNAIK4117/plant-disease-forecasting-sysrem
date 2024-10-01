@@ -16,29 +16,31 @@
         </nav>
 
         <div class="navbar" id="navitems">
-            <ul>
-                <a href="#">home</a>
-                <a href="#">about</a>
-                <a href="#"> Services</a>
-                <a href="#">contact</a>
+            <ul>̥
+                <a href="#" id="headerhome">home</a>
+                <a href="about.html">about</a>
+                <a href="service.html"> Services</a>
+                <a href="contactus.html">contact us</a>
             </ul>
         </div>
 
         <div class="navbar" id="login">
-           <button id="loginform" onclick="document.getElementById('signup').style.display='block'" style="width:auto;">login</button>
-           <button id="signupform" onclick="formopen()">sign up</button>
+           <button id="openFormBtn" >Login</button>
+           <button id="signupform" onclick="formopen()">Register</button>
 
         </div>
 
     </header>
-    <!-- sign form  -->
+    <!-- rigester form  -->
     <div id="id01" class="modal">
         <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
         <form class="modal-content" action="/action_page.php">
           <div class="container">
-            <h1>Sign Up</h1>
+            <h1>REGISTER</h1>
             <p>Please fill in this form to create an account.</p>
             <hr>
+            <label for="fullname">Full name</label>
+            <input type="text" name="fullname" id="fullname" placeholder="Enter Full Name" required>
             <label for="email"><b>Email</b></label>
             <input type="text" placeholder="Enter Email" name="email" id="inputemail" required>
       
@@ -53,9 +55,24 @@
       
             <div class="clearfix">
               <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Back</button>
-              <button type="submit" class="signupbtn">Sign Up</button>
+              <button type="submit" class="signupbtn">Login</button>
             </div>
           </div>
+        </form>
+      </div>
+
+      <!-- loin form -->
+      <div id="formPopup" class="form-popup">
+        <form class="form-container">
+          <h2>user login</h2>
+          <label for="name"><b>Email</b></label>
+          <input type="text" id="name" placeholder="Enter gmail" class="loginform" required>
+    
+          <label for="email"><b>password</b></label>
+          <input type="email" id="email" placeholder="Enter password" class="loginform" required>
+    
+          <button type="submit" class="btn">Submit</button>
+          <button type="button" class="btn cancel" id="closeFormBtn">Close</button>
         </form>
       </div>
    
@@ -65,13 +82,14 @@
         <div class="sidebar" id="mySidebar">
             <a href="#" class="closebtn" onclick="closeSidebar()">×</a>
             <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="#">Contact</a>
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="contactus.html">Contact us</a>
             <a href="#">setting</a>
         </div>
     </aside>
     <!-- hero section -->
+     <div class="heroarea"> 
      <div class="herosection">
         <h1>predict plant disease before they strike</h1>
         <p>get accurate and real-time disease predictions for your crops </p>
@@ -79,8 +97,10 @@
         <div class="inputfile">
          <button type="button" title="choosefiles" id="uploadBtn"><img alt="file" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAATtJREFUSEvt1rsvBFEUx/HPUupFJEKtVmmE/0BUKqJBIdERhVei0SMUtEqtikSnUWqUKEUUXoXYKyuZrJ0xO25mC3u7yf3d8z2Pe87cihatSou42uDSMl+f6lksYyDFgz0s4v2vHibBIzjPYfASE7jNoU2VJMEr2Mpp7AE7+MjQv+IUV400SfA61nKCm5HNYb/+QBngUJK+vOAY/Z3M4A97aRH/T3CIeghdzdykhHYaU7Xv0Vr73XzvZ6V6F/MFoWnHZnAUNtPAPbhDZ2TwJI7rwaGHw00MaxWbkaFP6MZbVsT36I0M3sbSbzWOzPwarf3J+V7G5ApBnGA8GU1Z4DGclQ2+xmDeWR2zxuFxcZAFDi20EZNYfa081rrjJQs8jItq/3ZEgj9jAYeN7MX4CxXysw0ulLYih1qW6k9vnjgfhBTKPQAAAABJRU5ErkJggg=="/>file</button>
          <input title="fileinput" type="file" id="photoInput" accept="image/*">
-         <button type="button" title="selectcamera" id="choosecamera"><img alt="camera" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfxJREFUSEvt1s3LTVEUx/HPk7wkbynKwEDeUhJFCjESA1Fe/gGijCgjIpQnEylTSjExEIWJgZD3EsIAGSgTpCTCQOKs2reu0z337NO9uRNndM4+a/2+e6299tp7yICeoQFxNQXPwhaMLk34By7idW4gTcALcAsTK8Q/YQVe5MBzwfNwB5NrRD9ieU7kOeDZuIspOZHgXYK/6WZfBi/ELsxoc4pop2ZCW2Yf8LLNJyZxHM9bY+3gOXiKMQ0huebfEUG8DYd28B4cy1XBq2Q7t4HPbpwogw/hYI3IQwzjOr4m2/FFDazGAcRSdXsOFz+D81fEdeCzRZq2FoBfFcqjcA4bu5Abg59gKX4m0e1Ym96v4lR6H1uAn2FmBbwxeCVuJ7FLWF8SvowNaWwzzvcD/B7T2iI9WSG6I0Ueu+JLUQsjO9g1ivheagihc6HLGkav3pRgsV/n9wp+hMVJJBf8GIt6BUfaJhVb7TeiqOpSPQKfi54wrldw+Mc+vZZZXOtwpR/FFRrRSpdkbKc4p8O2qps1Kq7W5M9g279uIC34g9Qyb+BbGpyANdhf3EListD3llkWjJtGtMmqLtVpAh1TvS9FUzPpnn4H42gotB+Lq3CzJ9l652XFstwvg+N7J/Zier1GI4u4gRzB6ZZXzp2rESHX+D84N1M92w0s1X8AYwlqH89rFFwAAAAASUVORK5CYII="/>camera</button>
+         <input type="file" accept="image/*" id="cameraInput" capture="camera" style="display:none;" onchange="previewImage(event)">
+         <button type="button" title="selectcamera" id="openCamera"><img alt="camera" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAAAfxJREFUSEvt1s3LTVEUx/HPk7wkbynKwEDeUhJFCjESA1Fe/gGijCgjIpQnEylTSjExEIWJgZD3EsIAGSgTpCTCQOKs2reu0z337NO9uRNndM4+a/2+e6299tp7yICeoQFxNQXPwhaMLk34By7idW4gTcALcAsTK8Q/YQVe5MBzwfNwB5NrRD9ieU7kOeDZuIspOZHgXYK/6WZfBi/ELsxoc4pop2ZCW2Yf8LLNJyZxHM9bY+3gOXiKMQ0huebfEUG8DYd28B4cy1XBq2Q7t4HPbpwogw/hYI3IQwzjOr4m2/FFDazGAcRSdXsOFz+D81fEdeCzRZq2FoBfFcqjcA4bu5Abg59gKX4m0e1Ym96v4lR6H1uAn2FmBbwxeCVuJ7FLWF8SvowNaWwzzvcD/B7T2iI9WSG6I0Ueu+JLUQsjO9g1ivheagihc6HLGkav3pRgsV/n9wp+hMVJJBf8GIt6BUfaJhVb7TeiqOpSPQKfi54wrldw+Mc+vZZZXOtwpR/FFRrRSpdkbKc4p8O2qps1Kq7W5M9g279uIC34g9Qyb+BbGpyANdhf3EListD3llkWjJtGtMmqLtVpAh1TvS9FUzPpnn4H42gotB+Lq3CzJ9l652XFstwvg+N7J/Zier1GI4u4gRzB6ZZXzp2rESHX+D84N1M92w0s1X8AYwlqH89rFFwAAAAASUVORK5CYII="/>camera</button>
         </div>
+     </div>
      </div>
      <!-- result area -->
      <div class="result">
@@ -136,7 +156,7 @@
      </div>
 
      <!-- crops information-->
-      <div class="cropinformation">
+      <!-- <div class="cropinformation">
         <h1 >related plant crops</h1>
         <div class="relatedcrops">
 
@@ -191,11 +211,11 @@
 
         </div>
 
-      </div>
+      </div> -->
 
       <!-- some youtube video turtorial -->
 
-      <div class="youtubevideo">
+      <!-- <div class="youtubevideo">
         <h1> tutorial guids</h1>
         <div class=" tutorial">
         <div class="youtube">
@@ -211,7 +231,7 @@
         </div>
     </div>
 
- </div>
+ </div> -->
 
       <!-- footer area -->
        <footer class="footer">
